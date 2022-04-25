@@ -510,17 +510,13 @@ footer {
   background-color: rgb(26, 25, 25);
   width: 100%;
   height: 170px;
-  text-decoration: none;
 }
 
 footer ul {
-  text-decoration: none;
   height: 50%;
-  ;
   display: block;
   padding-top: 50px;
-  margin-left: 18%;
-  text-decoration: none;
+  margin-left: 19%;
 }
 
 footer ul li {
