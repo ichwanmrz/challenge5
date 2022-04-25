@@ -9,63 +9,82 @@ body {
   background-color: black;
 }
 
-#mainpage {
-  position: relative;
-  text-align: center;
-  margin: 0%;
+#page1 {
   width: 100%;
-  height: 90%;
-  display: block;
+  height: 100%;
+  text-align: center;
   justify-content: center;
+  vertical-align: middle;
 }
 
-#mainpage h1 {
+#page1 h1 {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 80px;
+  font-size: 62px;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
 
-#mainpage p {
+#page1 p {
   color: white;
   font-size: larger;
   letter-spacing: 3px;
+  margin-bottom: 3%;
 }
 
-#mainpage button.btn-warning {
+#page1 button.btn-warning {
   width: 15%;
-  height: 8%;
+  height: 10%;
+  margin-bottom: 10%;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-transform: uppercase;
   font-size: medium;
+}
+
+#page1 .btn2 {
+  display: block;
+  margin-top: 0%;
+  margin-bottom: 4%;
+  font-size: x-small;
+}
+
+button.scroll {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+button svg {
+  display: block;
+  color: white;
+  text-align: left;
+  justify-items: left;
+  display: block;
+  margin-top: 0%;
+  margin-left: 20px;
+  margin-bottom: 0%;
 }
 
 div button {
   background-color: transparent;
   color: white;
   border-style: none;
-  margin-bottom: 20px;
-}
-
-button svg {
-  color: white;
-  background-color: transparent;
 }
 
 nav {
+  display: block;
   position: sticky;
   background-color: black;
   opacity: 0.6;
   overflow: hidden;
   float: left;
   width: 100%;
-  height: 65px;
+  height: 60px;
   margin-top: 0px;
-  margin-bottom: 7%;
   padding: 0px;
-  display: block;
   text-align: center;
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
@@ -132,7 +151,6 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: white;
   top: 0%;
   bottom: 0%;
   width: 100%;
@@ -176,20 +194,15 @@ nav {
   color: white;
   display: inline-block;
   list-style: circle;
-  margin-top: 380px;
+  margin-top: 375px;
   margin-left: 40px;
   width: 20px;
-  
 }
 
-  #img1 li:first-child { 
-    color: white;
-    list-style-type: disc;
-
-  } 
-
-  
-
+#img1 li:first-child {
+  color: white;
+  list-style-type: disc;
+}
 
 #img2 {
   background-image: url("assets/features.jpg");
@@ -214,14 +227,14 @@ nav {
   font-style: normal;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 60px;
+  font-size: 40px;
   font-weight: lighter;
 }
 
 #text2 p {
   padding-top: 20%;
   margin-bottom: 0%;
-  font-size: x-large;
+  font-size: medium;
 }
 
 #img2 ul {
@@ -232,7 +245,7 @@ nav {
   font-family: Arial, Helvetica, sans-serif;
   font-size: x-large;
   margin-top: 5%;
-  margin-left: 55%;
+  margin-left: 54%;
   margin-right: 5%;
   list-style-type: circle;
 }
@@ -240,7 +253,7 @@ nav {
 #img2 li {
   color: white;
   list-style-position: outside;
-  padding-left: 30px;
+  padding-left: 20px;
 }
 
 #img2 li:first-child {
@@ -249,12 +262,13 @@ nav {
 
 #img2 ul li h3 {
   color: orange;
+  font-size: large;
 }
 
 #img2 ul p {
   text-transform: lowercase;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: medium;
+  font-size: small;
   color: white;
   padding-left: 8px;
 }
@@ -400,10 +414,9 @@ table tr {
   position: relative;
   display: block;
   float: left;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin-top: 0%;
+  margin-bottom: 10%;
 }
-
 
 #img4 div ul {
   position: relative;
@@ -411,30 +424,38 @@ table tr {
   list-style: none;
   float: left;
   width: 100%;
-  height: 5%;
+  height: 100%;
 }
 
 .topscore ul li {
   display: block;
   background-color: rgb(44, 42, 42);
   border: none;
+  width: 70%;
+  height: 35%;
+  margin: 28px;
   border-radius: 15px;
+  margin-bottom: -20px;
 }
 
 .topscore ul li:first-child {
   margin-left: 100px;
   margin-right: 25px;
-
+  padding-top: 10px;
 }
 
 .topscore ul li:nth-child(2) {
+  height: 40%;
   margin-left: 0px;
   margin-right: 150px;
+  padding-top: 10px;
 }
 
 .topscore ul li:last-child {
+  height: 40%;
   margin-left: 50px;
   margin-right: 70px;
+  padding-top: 10px;
 }
 
 .topscore ul li h4 {
@@ -451,20 +472,20 @@ table tr {
 
 .topscore ul li p {
   color: white;
-  margin-top: 20px;
+  margin-top: 25px;
   margin-left: 20px;
   text-align: left;
   display: flexbox;
   font-size: small;
-  text-align: justify;
+  text-align: left;
 }
 
 .topscore ul li p:last-child {
   color: silver;
   opacity: 0.8;
+  margin-top: 1px;
   margin-left: 20px;
-  padding-bottom: 10px;
-  text-align: left
+  text-align: left;
 }
 
 .topscore ul li #foto1 {
@@ -472,7 +493,7 @@ table tr {
   width: 60px;
   border-radius: 100%;
   border: 1px solid white;
-  margin-top: 15px;
+  margin-top: 10px;
   margin-left: 15px;
   float: left;
 }
@@ -481,6 +502,56 @@ table tr {
   float: right;
   margin-top: 15px;
   margin-right: 25px;
+}
+
+
+
+footer {
+  display: block;
+  color: white;
+  background-color: rgb(26, 25, 25);
+  width: 100%;
+  height: 170px;
+}
+
+footer ul {
+  height: 50%;;
+  display: block;
+  padding-top: 50px;
+  margin-left: 18%;
+}
+
+footer ul li {
+  text-transform: uppercase;
+  font-size: small;
+  font-weight: bold;
+  list-style: none;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 55px;
+}
+
+footer hr {
+  color: rgb(206, 192, 192);
+  border-width: 5px;
+  width: 95%;
+  height: 5px;
+  margin-left: 1%;
+}
+
+footer p, h6 {
+display: inline;
+text-align: left;
+}
+
+footer p {
+  margin-left:1%;
+  color: grey;
+}
+
+footer h6 {
+  margin-left: 35%;
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 400px) {
