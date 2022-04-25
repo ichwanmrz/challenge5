@@ -504,21 +504,23 @@ table tr {
   margin-right: 25px;
 }
 
-
-
 footer {
   display: block;
   color: white;
   background-color: rgb(26, 25, 25);
   width: 100%;
   height: 170px;
+  text-decoration: none;
 }
 
 footer ul {
-  height: 50%;;
+  text-decoration: none;
+  height: 50%;
+  ;
   display: block;
   padding-top: 50px;
   margin-left: 18%;
+  text-decoration: none;
 }
 
 footer ul li {
@@ -531,6 +533,11 @@ footer ul li {
   margin-right: 55px;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 footer hr {
   color: rgb(206, 192, 192);
   border-width: 5px;
@@ -539,13 +546,14 @@ footer hr {
   margin-left: 1%;
 }
 
-footer p, h6 {
-display: inline;
-text-align: left;
+footer p,
+h6 {
+  display: inline;
+  text-align: left;
 }
 
 footer p {
-  margin-left:1%;
+  margin-left: 1%;
   color: grey;
 }
 
