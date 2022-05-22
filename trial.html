@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Trial Now</title>
+    <script src="style.js"></script>
+
+    <style>
+        body {
+            background-image: none;
+            background-color: rgb(148, 137, 117);
+            position: fixed;
+        }
+
+        div.back {
+            display: inline;
+        }
+
+        a svg {
+            display: inline;
+            color: maroon;
+
+            float: left;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+
+        div.box {
+            border-radius: 20%;
+            background-color: rgb(129, 102, 102);
+            width: 4%;
+            height: 7%;
+            margin-top: 1%;
+            margin-left: 3%;
+            padding: 5px 0px 5px 0px;
+        }
+
+        div.bola {
+            display: block;
+            position: relative;
+            background-color: rgb(103, 65, 65);
+            border: 3px solid rgb(249, 242, 242);
+            border-radius: 50%;
+            width: 80%;
+            height: 100%;
+            margin-left: 10%;
+        }
+
+        .bola img {
+            position: static;
+            display: flexbox;
+            float: left;
+            width: 30%;
+            height: 40%;
+            margin-top: 5%;
+            margin-left: 12%;
+        }
+
+        .bola img:last-child {
+            margin-left: 30%;
+        }
+
+        div.play {
+            display: flex;
+        }
+
+        div.player1 {
+            display: block;
+            width: 50%;
+            height: 50%;
+            position: relative;
+        }
+
+        div.player2 {
+            display: block;
+            width: 50%;
+            height: 50%;
+            position: relative;
+        }
+
+        div.player1 title {
+            display: block;
+            position: relative;
+            width: 18%;
+            margin-top: 5%;
+            margin-left: 60%;
+            margin-bottom: 3%;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: arial black;
+            font-size: medium;
+            letter-spacing: 1px;
+        }
+
+        div.player1 input {
+            display: block;
+            position: relative;
+            width: 15%;
+            height: 15%;
+            margin-top: 0%;
+            margin-bottom: 5%;
+            margin-left: 60%;
+            padding: 20px;
+        }
+
+        div.player2 input {
+            display: block;
+            position: relative;
+            width: 15%;
+            height: 15%;
+            text-align: center;
+            font-weight: bold;
+            font-size: medium;
+            letter-spacing: 2px;
+            margin-top: 0%;
+            margin-bottom: 5%;
+            margin-left: 17%;
+            padding: 20px;
+        }
+
+        div.player2 title {
+            display: block;
+            position: relative;
+            width: 15%;
+            margin-top: 5%;
+            margin-left: 17%;
+            margin-bottom: 3%;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: medium;
+            font-family: arial black;
+            letter-spacing: 1px;
+        }
+
+        div.result {
+            display: flex;
+            position: relative;
+            width: 20%;
+            margin-top: 13%;
+            margin-bottom: 15%;
+        }
+
+        #versus {
+            display: block;
+            color: darkred;
+            font-size: 64px;
+            font-weight: bold;
+            text-align: center;
+            margin-left: 20%;
+            margin-bottom: 0%;
+        }
+
+        #playerWin {
+            background-color: seagreen;
+            font-size: medium;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            margin-left: 9%;
+            color: white;
+            padding: 15px 25px 15px 25px;
+            transform: rotate(-25deg);
+            display: none;
+            animation-name: appear;
+            animation: appear 2s ease 0s 1 normal;
+        }
+
+        #comWin {
+            background-color: seagreen;
+            font-size: medium;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            margin-left: 9%;
+            color: white;
+            padding: 15px 40px 15px 40px;
+            transform: rotate(-25deg);
+            display: none;
+            animation-name: appear;
+            animation: appear 2s ease 0s 1 normal;
+        }
+
+        #draw {
+            background-color: darkgreen;
+            font-size: medium;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            margin-left: 9%;
+            color: white;
+            padding: 25px 35px 25px 35px;
+            transform: rotate(-25deg);
+            display: none;
+            animation-name: appear;
+            animation: appear 2s ease 0s 1 normal;
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+                transform: scale3d(0.3, 0.3, 0.3);
+            }
+
+            60% {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        .refresh input {
+            display: block;
+            position: relative;
+            width: 4%;
+            height: 4%;
+            margin-top: -8%;
+            margin-left: 46%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="back">
+        <a href="index.html">
+            <svg id="back" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor">
+                <path d="M15.293 3.293 6.586 12l8.707 8.707 1.414-1.414L9.414 12l7.293-7.293-1.414-1.414z" />
+            </svg>
+        </a>
+        <div class="box">
+            <div class="bola">
+                <img src="assets/gunting.png">
+                <img src="assets/kertas.png">
+                <img src="assets/batu.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="play">
+        <div class="player1">
+            <title>Player 1</title>
+            <input id="batu" type="image" src="assets/batu.png" onclick="play(this, 0)">
+            <input id="kertas" type="image" src="assets/kertas.png" onclick="play(this, 1)">
+            <input id="gunting" type="image" src="assets/gunting.png" onclick="play(this, 2)">
+        </div>
+        <div class="result">
+            <h1 id="versus">VS</h1>
+            <h1 id="playerWin">Player 1<br />Win </h1>
+            <h1 id="comWin">Com<br />Win</h1>
+            <h1 id="draw">Draw</h1>
+        </div>
+        <div class="player2">
+            <title>COM</title>
+            <input class="computer" id="batu2" type="image" src="assets/batu.png">
+            <input class="computer" id="kertas2" type="image" src="assets/kertas.png">
+            <input class="computer" id="gunting2" type="image" src="assets/gunting.png">
+        </div>
+    </div>
+    <div class="refresh">
+        <input id="refresh" type="image" src="assets/refresh.png" title="Klik Reset For New Game" onclick="reset()">
+    </div>
+
+</body>
+
+</html> 
