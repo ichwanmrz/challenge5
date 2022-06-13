@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <script src="index.js"></script>
+    <script src="style.js"></script>
+
+    <style>
+        body {
+            background-color: tan;
+        }
+
+        a {
+            display: flex;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            color: purple;
+        }
+
+        div {
+            width: 50%;
+            margin-top: 10%;
+            margin-left: 35%;
+        }
+
+        h2 {
+            width: 60%;
+            margin-left: 5%;
+            color: purple;
+            text-transform: capitalize;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: larger;
+        }
+
+        form {
+            position: relative;
+            border: 5px double purple;
+            padding: 10px;
+            width: 60%;
+        }
+
+        form label {
+            margin-left: 5%;
+            font-weight: bold;
+
+        }
+
+        form input {
+            width: 80%;
+            margin-top: 3%;
+            margin-left: 5%;
+            margin-bottom: 5%;
+            margin-right: 5%;
+            padding: 5px;
+        }
+
+        div.btnform {
+            margin-top: 2%;
+            margin-bottom: 2%;
+            margin-left: 70%;
+            margin-right: 10%;
+
+        }
+
+        #create {
+            position: absolute;
+            width: 20%;
+            margin-top: -12.5%;
+            margin-left: 30px;
+            margin-right: 10%;
+            color: blueviolet;
+            background-color: transparent;
+            border-style: none;
+            font-style: italic;
+        }
+
+        #forgot {
+            position: absolute;
+            width: 12%;
+            margin-top: -5%;
+            margin-left: 20px;
+            margin-right: 10%;
+            color: blueviolet;
+            background-color: transparent;
+            border-style: none;
+            font-style: italic;
+
+        }
+
+        div #submit {
+            background-color: silver;
+            border: 3px solid grey;
+            border-radius: 5px;
+            letter-spacing: 1px;
+        }
+
+        button#create:hover {
+            color: red;
+        }
+
+        button#forgot:hover {
+            color: red;
+        }
+
+        button#submit:hover {
+            color: white;
+            background-color: purple;
+        }
+    </style>
+
+</head>
+
+<body>
+    <a href="/">
+        <svg id="back" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor">
+            <path d="M15.293 3.293 6.586 12l8.707 8.707 1.414-1.414L9.414 12l7.293-7.293-1.414-1.414z" />
+        </svg>Home
+    </a>
+    <div>
+        <h2>Please login to play the game</h2>
+        <form method="POST" action="/login">
+            <label for id="email" name="email">Username :</label>
+            <br />
+            <input type="email" name="email" placeholder="Enter Your Email" required>
+            <br />
+            <br />
+            <label for id="password" name="password">Password :</label>
+            <br />
+            <input type="password" name="password" placeholder="Enter Your Password" required>
+            <div class="btnform">
+
+                <button id="submit" type="submit" value="login">Submit</button>
+            </div>
+
+        </form>
+        <button id="create" onclick="create()">Please Sign up Or Create a new profile !</button>
+        <button id="forgot" onclick="forgot()">Forgot password ?</button>
+    </div>
+
+</body>
+
+<script>
+    function create() {
+        window.location.href = "/edit";
+    }
+
+    function forgot() {
+        window.location.href = "/edit";
+    }
+</script>
+
+</html>

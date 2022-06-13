@@ -1,0 +1,29 @@
+{
+  "name": "challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "nodemon --experimental-json-modules index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ichwanmrz/challenge3.git"
+  },
+  "author": "ichwan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ichwanmrz/challenge3/issues"
+  },
+  "homepage": "https://github.com/ichwanmrz/challenge3#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "chalk": "^4.1.2",
+    "ejs": "^3.1.8",
+    "ejs-lint": "^1.2.2",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.1",
+    "nodemon": "^2.0.16"
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <script src="index.js"></script>
+  <script src="style.js"></script>
+
+  <style>
+    body {
+      background-color: tan;
+    }
+
+    h1, h2, a {
+      margin-left: 2%;
+    }
+  </style>
+
+</head>
+<body>
+  <h1>Welcome back . . .please take a seat !</h1>
+  <h2><u>Total User saat ini berjumlah <%= totalUsers %> Users :</u></h2>
+  <br>
+
+  <ol>
+    <% users.map(e => { %>
+    <li> <%= e.email %></li>
+  <%})%>
+</ol>
+
+  <br>
+  <br>
+  <a href="/">Back to Home</a>
+  <a href="/trial">Enjoy the Game</a>
+  <a href="/edit">Change Your Profile</a>
+  
+</body>
+</html>

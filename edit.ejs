@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="index.js"></script>
+
+    <style>
+        body {
+            background-color: tan;
+        }
+
+        h2 {
+            font-style: oblique;
+        }
+
+        div label input {
+            margin-top: 2%;
+            margin-left: 12px;
+        }
+
+        input#name {
+            margin-left: 128px;
+        }
+
+        input#email {
+            margin-left: 128px;
+        }
+
+        input#newpassword {
+            margin-left: 70px;
+        }
+
+        div input#edit {
+            width: 8%;
+            margin-top: 2%;
+            margin-left: 19%;
+            background-color: silver;
+            border: 3px solid grey;
+            border-radius: 5px;
+            letter-spacing: 1px;
+        }
+
+        #edit:hover {
+            color: white;
+            background-color: purple;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="/edit" method="post">
+        <h2> <u>Create Your Profile</u> :</h2>
+        <div>
+            <label>
+                <span>Email </span>
+                <input id="email" type="email" placeholder="Email" required>
+            </label>
+        </div>
+        <div>
+            <label>
+                <span>Name </span>
+                <input id="name" type="text" placeholder="Name">
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <span>New Password </span>
+                <input id="newpassword" type="password" placeholder="New Password" required>
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <span>Confirm New Password </span>
+                <input id="confirm" type="password" placeholder="Confirm New Password" required>
+            </label>
+        </div>
+
+        <div>
+            <input id="edit" type="submit" value="Submit">
+        </div>
+        <a href="/login">Back to Login</a>
+    </form>
+</body>
+
+</html>
