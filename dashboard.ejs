@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="index.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <style>
+        body {
+            background-color: tan;
+        }
+
+        h3 {
+            background-color: rgb(94, 146, 94);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+        }
+
+        table.table {
+            text-align: center;
+            width: 100%;
+        }
+
+        .mb-1 {
+            width: 30%;
+        }
+        input.edit {
+            width: 250px;
+        }
+
+        button#saveUsr {
+            margin-top: 5%;
+            border-style: none;
+        }
+
+        button#btn-close {
+            border-style: none;
+        }
+
+        button#btn-add {
+            margin-left: 7%;
+            text-align: center;
+        }
+
+        a.btn {
+            margin-left: 7%;
+        }
+
+        div#formAdd {
+            display: none;
+        }
+
+        #btn-delete a {
+            float: right;
+            width: 100px; 
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+            background-color: #F00;
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid transparent;
+            }
+
+        #btn-edit a {
+            width: 80px;
+            height: 30px;
+            float: left;
+            vertical-align: middle;
+            background-color: #F00;
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid transparent;
+        }
+
+        #popup {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: rgba(0,0,0,.7);
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            visibility: hidden;
+        }
+
+        .window {
+            width: 400px;
+            height: 300px;
+            background: #fff;
+            border-radius: 10px;
+            position: relative;
+            padding: 10px;
+            text-align: center;
+            margin: 15% auto;
+        }
+        .window h2 {
+            margin: 30px 0 0 0;
+        }
+
+        .close-button {
+            width: 6%;
+            height: 10%;
+            line-height: 23px;
+            background: black;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            display: block;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            position: absolute;
+            top: -10px;
+            right: -10px;	
+        }
+
+        #popup:target {
+            visibility: visible;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <br/>
+    <a class="btn btn-secondary" href="/"><h6>Back to Home</h6></a>
+    <a class="btn btn-secondary" href="/trial"><h6>Play The Game</h6></a>
+    <a class="btn btn-secondary" href="/login"><h6>Log Out</h6></a>
+    <br/>
+    <br/>
+    <div class="container">
+        <h3>Biodata User :</h3>
+        <table class="table">
+            <thead class="table-primary">
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Birth Place</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody class="table-secondary" >
+                <% for (let user of users) { %>
+                <tr>
+                <td scope="row"><%= user.id %></td>
+                <td scope="row"><%= user.username %></td>
+                <td scope="row"><%= user.password %></td>
+                <td scope="row"><%= user.user_game_biodatum.first_name %></td>
+                <td scope="row"><%= user.user_game_biodatum.last_name %></td>
+                <td scope="row"><%= user.user_game_biodatum.birthplace %></td>
+                <td>
+                    <div id="btn-edit" ><a href="#popup">Edit  </a>
+                    <!-- <a href="/user/<%= user.id %>/update"></a> -->
+                    <!-- Saya belum sempat bikin page baru hehe.. -->
+                    </div>
+                    <div id="popup">
+                        <div class="window">
+                            <a href="#" class="close-button" title="Close">X</a>
+                            <h3>Isilah data berikut ini :</h3>
+                            <br/>
+                            <form method="post" action="/user/<%= user.id %>/edit">
+                                <input type="text" id="editUsr" name="username" class="edit" value="<%= user.username %>">
+                                <input type="text" id="editPsw" name="password" class="edit" value="<%= user.password %>">
+                                <input type="text" id="firstN" name="first_name" class="edit" value="<%= user.user_game_biodatum.first_name %>">
+                                <input type="text" id="lastN" name="last_name" class="edit" value="<%= user.user_game_biodatum.last_name %>">
+                                <input type="text" id="birthP" name="birthplace" class="edit" value="<%= user.user_game_biodatum.birthplace %>">
+                                <br/>
+                                <button onclick="saveUser()" type="submit" id="saveUsr" class="btn btn-success">Save</button> 
+                            </form> 
+                        </div>
+                    </div>
+                    <div id="btn-delete" onclick="remove()"><a href="/user/<%= user.id %>/delete">Delete</a></div>
+                </td>
+                </tr>
+                <%}%>
+            </tbody>
+        </table>
+        <br/>
+    </div>
+
+    <button onclick="addUser()" id="btn-add" class="btn btn-success"><h6>Add New User</h6></button>
+    <br/>
+    <div id="formAdd" class="container">
+        <form method="post" action="/add">
+            <div class="mb-1">
+            <label for="username" class="form-label"></label>
+            <input type="text" name="username" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="mb-1">
+            <label for="password" class="form-label"></label>
+            <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="mb-1">
+            <label for="first_name" class="form-label"></label>
+            <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
+            </div>
+            <div class="mb-1">
+            <label for="last_name" class="form-label"></label>
+            <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
+            </div>
+            <div class="mb-1">
+            <label for="birthplace" class="form-label"></label>
+            <input type="text" name="birthplace" class="form-control" placeholder="Birth Place" required>
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-danger">Submit</button>
+            <button onclick="hide()" type="button" class="btn btn-secondary">Hide</button>
+          </form> 
+          <br/>
+        </div>
+       
+    </div>
+   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+<script>
+    
+    function saveUser() {
+        document.getElementById("editUsr").style.display = "none";
+        document.getElementById("editPsw").style.display = "none";
+        document.getElementById("firstN").style.display = "none";
+        document.getElementById("lastN").style.display = "none";
+        document.getElementById("saveUsr").style.display = "none";
+        document.getElementById("popup").style.display = "none";
+    }
+
+    function addUser() {
+        document.getElementById("formAdd").style.display = "block";
+    }
+    function hide() {
+        document.getElementById("formAdd").style.display = "none";
+    }
+
+</script>
+</html>

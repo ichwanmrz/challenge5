@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register</title>
+  <script src="index.js"></script>
+
+  <style>
+    body {
+            background-image: url("assets/main-bg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+        }
+    
+
+    form {
+      width: 25%;
+      margin-top: 5%;
+      margin-left: 7%;
+      padding: 15px;
+      background-color:darkcyan;
+      border: 5px solid purple;
+    }
+
+    h2 {
+      font-style: normal;
+    }
+
+    div label input {
+      margin-top: 2%;
+      margin-left: 12px;
+    }
+
+    input#email {
+      margin-left: 14%;
+    }
+
+    div input#register {
+      width: 75px;
+      margin-top: 2%;
+      margin-left: 60%;
+      margin-bottom: 5%;
+      background-color: silver;
+      border: 5px solid grey;
+      border-radius: 5px;
+      letter-spacing: 1px;
+    }
+
+    #register:hover {
+      color: white;
+      background-color: purple;
+    }
+
+    a {
+      margin-right: 20%;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="/register" method="post">
+    <h2><u>Register Here</u> :</h2>
+    <div>
+      <label>
+        <span>Email :</span>
+        <input id="email" name="email" type="email" placeholder="Email" required />
+      </label>
+    </div>
+    <div>
+      <label>
+        <span>First Name :</span>
+        <input id="first_name" name="first_name" type="text" placeholder="Fist Name" required />
+      </label>
+    </div>
+    <div>
+      <label>
+        <span>Last Name :</span>
+        <input id="last_name" name="last_name" type="text" placeholder="Last Name" required />
+      </label>
+    </div>
+
+    <div>
+      <label>
+        <span>Birth Place :</span>
+        <input id="birthplace" name="birthplace" type="text" placeholder="Birth Place" required />
+      </label>
+    </div>
+<br/>
+    <div>
+      <input id="register" type="submit" value="Submit" />
+    </div>
+    <a href="/login">Back to Login</a>
+    <a href="/">Back to Home</a>
+  </form>
+</body>
+
+</html>
