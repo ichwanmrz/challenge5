@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
 
     <script src="index.js"></script>
@@ -12,7 +12,12 @@
 
     <style>
         body {
-            background-color: tan;
+            background-image: url("assets/main-bg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 100%;
         }
 
         a {
@@ -20,42 +25,43 @@
             text-decoration: none;
             font-size: 20px;
             font-weight: bold;
-            color: purple;
+            color: black;
         }
 
-        div {
+        .formLogin {
             width: 50%;
-            margin-top: 10%;
+            margin: 7% auto;
             margin-left: 35%;
         }
 
         h2 {
             width: 60%;
             margin-left: 5%;
-            color: purple;
+            color: black;
             text-transform: capitalize;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: larger;
+            font-size: large;
         }
 
         form {
-            position: relative;
-            border: 5px double purple;
+            background-color: darkcyan;
+            border: 7px solid purple;
             padding: 10px;
             width: 60%;
         }
 
         form label {
             margin-left: 5%;
-            font-weight: bold;
-
+            font-weight: bolder;
+            font-size: larger;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
         }
 
         form input {
             width: 80%;
             margin-top: 3%;
             margin-left: 5%;
-            margin-bottom: 5%;
+            margin-bottom: 5px;
             margin-right: 5%;
             padding: 5px;
         }
@@ -65,47 +71,39 @@
             margin-bottom: 2%;
             margin-left: 70%;
             margin-right: 10%;
-
         }
 
-        #create {
-            position: absolute;
-            width: 20%;
-            margin-top: -12.5%;
-            margin-left: 30px;
-            margin-right: 10%;
-            color: blueviolet;
-            background-color: transparent;
-            border-style: none;
+        a#create {
+            width: 60%;
+            margin-left: 5%;
+            margin-right: 0%;
+            color: blue;
+            font-size: 90%;
             font-style: italic;
         }
 
-        #forgot {
-            position: absolute;
-            width: 12%;
-            margin-top: -5%;
+        a#forgot {
+            width: 26%;
             margin-left: 20px;
             margin-right: 10%;
-            color: blueviolet;
-            background-color: transparent;
-            border-style: none;
+            color: blue;
+            font-size: 90%;
             font-style: italic;
-
         }
 
         div #submit {
             background-color: silver;
-            border: 3px solid grey;
+            border: 5px solid grey;
             border-radius: 5px;
             letter-spacing: 1px;
         }
 
-        button#create:hover {
-            color: red;
+        a#create:hover {
+            color: blueviolet;
         }
 
-        button#forgot:hover {
-            color: red;
+        a#forgot:hover {
+            color: blueviolet;
         }
 
         button#submit:hover {
@@ -113,46 +111,32 @@
             background-color: purple;
         }
     </style>
-
 </head>
 
 <body>
     <a href="/">
         <svg id="back" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor">
-            <path d="M15.293 3.293 6.586 12l8.707 8.707 1.414-1.414L9.414 12l7.293-7.293-1.414-1.414z" />
-        </svg>Home
+            <path d="M15.293 3.293 6.586 12l8.707 8.707 1.414-1.414L9.414 12l7.293-7.293-1.414-1.414z" /></svg>Home
     </a>
-    <div>
-        <h2>Please login to play the game</h2>
-        <form method="POST" action="/login">
-            <label for id="email" name="email">Username :</label>
+    <div class="formLogin">
+        <h2>Please login here to play the Game</h2>
+        <form method="post" action="/login">
+            <label for="username" name="username">Username :</label>
             <br />
-            <input type="email" name="email" placeholder="Enter Your Email" required>
+            <input type="text" name="username" placeholder="Enter Username" required />
+            <a href="/register" id="create">Not yet a Member ? Just click here.</a>
             <br />
             <br />
-            <label for id="password" name="password">Password :</label>
+            <label for="password" name="password">Password :</label>
             <br />
-            <input type="password" name="password" placeholder="Enter Your Password" required>
+            <input type="password" name="password" placeholder="Enter Your Password" required />
+            <br />
+            <a href="/register" id="forgot">Forgot password</a>
             <div class="btnform">
-
                 <button id="submit" type="submit" value="login">Submit</button>
             </div>
-
         </form>
-        <button id="create" onclick="create()">Please Sign up Or Create a new profile !</button>
-        <button id="forgot" onclick="forgot()">Forgot password ?</button>
     </div>
-
 </body>
-
-<script>
-    function create() {
-        window.location.href = "/edit";
-    }
-
-    function forgot() {
-        window.location.href = "/edit";
-    }
-</script>
 
 </html>
